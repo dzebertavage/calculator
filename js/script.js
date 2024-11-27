@@ -14,11 +14,10 @@ const btnEquals = document.querySelector(".btn-equals");
 
 btnNumberArr.forEach((item, index) => {
     item.addEventListener("click", function () {
-        displayArr.push(this.textContent);
+        let btnNumberInt = parseInt(this.textContent);
+        displayArr.push(btnNumberInt);
     });
 });
-
-
 
 function add(num1, num2) {
     return num1 + num2;

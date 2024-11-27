@@ -1,6 +1,15 @@
 let num1;
 let num2;
 let operator;
+const display = document.querySelector(".display");
+const btnNumber = document.querySelector(".number");
+const btnOperator = document.querySelector(".operator");
+const btnDecimal = document.querySelector(".btn-decimal");
+const btnClear = document.querySelector(".btn-ac");
+const btnPosNeg = document.querySelector(".btn-positive-negative");
+const btnPercent = document.querySelector(".btn-percent");
+const btnEquals = document.querySelector(".btn-equals");
+
 
 function add(num1, num2) {
     return num1 + num2;

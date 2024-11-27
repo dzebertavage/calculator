@@ -1,14 +1,23 @@
 let num1;
 let num2;
 let operator;
+let displayArr = [];
 const display = document.querySelector(".display");
-const btnNumber = document.querySelector(".number");
+const btnNumber = document.querySelectorAll(".number");
+const btnNumberArr = Array.from(btnNumber);
 const btnOperator = document.querySelector(".operator");
 const btnDecimal = document.querySelector(".btn-decimal");
 const btnClear = document.querySelector(".btn-ac");
 const btnPosNeg = document.querySelector(".btn-positive-negative");
 const btnPercent = document.querySelector(".btn-percent");
 const btnEquals = document.querySelector(".btn-equals");
+
+btnNumberArr.forEach((item, index) => {
+    item.addEventListener("click", function () {
+        displayArr.push(this.textContent);
+    });
+});
+
 
 
 function add(num1, num2) {
@@ -43,9 +52,3 @@ function operate(num1, num2, operator) {
             return divide(num1, num2);
     }
 }
-
-num1 = 4;
-num2 = 4;
-operator = "/";
-
-console.log(operate(num1, num2, operator));

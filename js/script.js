@@ -23,6 +23,14 @@ btnNumberArr.forEach((item) => {
     });
 });
 
+btnPosNeg.addEventListener("click", function () {
+    if (display.textContent.includes("-")) {
+        display.textContent = display.textContent.substring(1);
+    } else {
+        display.textContent = "-" + display.textContent;
+    }
+})
+
 btnClear.addEventListener("click", function () {
     let num1 = undefined;
     let num2 = undefined;

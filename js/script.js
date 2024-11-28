@@ -1,21 +1,26 @@
 let num1;
 let num2;
 let operator;
-let displayArr = [];
 const display = document.querySelector(".display");
 const btnNumber = document.querySelectorAll(".number");
 const btnNumberArr = Array.from(btnNumber);
-const btnOperator = document.querySelector(".operator");
+const btnOperator = document.querySelectorAll(".operator");
+const btnOperatorArr = Array.from(btnOperator);
 const btnDecimal = document.querySelector(".btn-decimal");
 const btnClear = document.querySelector(".btn-ac");
 const btnPosNeg = document.querySelector(".btn-positive-negative");
 const btnPercent = document.querySelector(".btn-percent");
 const btnEquals = document.querySelector(".btn-equals");
 
-btnNumberArr.forEach((item, index) => {
+btnNumberArr.forEach((item) => {
     item.addEventListener("click", function () {
-        let btnNumberInt = parseInt(this.textContent);
-        displayArr.push(btnNumberInt);
+        display.textContent += this.textContent;
+    });
+});
+
+btnOperatorArr.forEach((item) => {
+    item.addEventListener("click", function () {
+        operator = item.textContent;
     });
 });
 

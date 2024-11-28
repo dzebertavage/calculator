@@ -14,7 +14,11 @@ const btnEquals = document.querySelector(".btn-equals");
 
 btnNumberArr.forEach((item) => {
     item.addEventListener("click", function () {
-        display.textContent += this.textContent;
+        if (display.textContent.length >= 9) {
+            return;
+        } else {
+            display.textContent += this.textContent;
+        }
     });
 });
 

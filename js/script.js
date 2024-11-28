@@ -24,6 +24,14 @@ btnOperatorArr.forEach((item) => {
     });
 });
 
+btnDecimal.addEventListener("click", function () {
+    if (display.textContent.includes(".")) {
+        return;
+    } else {
+        display.textContent += this.textContent;
+    }
+});
+
 function add(num1, num2) {
     return num1 + num2;
 }

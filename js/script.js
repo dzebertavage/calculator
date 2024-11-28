@@ -29,7 +29,13 @@ btnPosNeg.addEventListener("click", function () {
     } else {
         display.textContent = "-" + display.textContent;
     }
-})
+});
+
+btnPercent.addEventListener("click", function () {
+    let displayNumber = parseInt(display.textContent);
+    display.textContent = displayNumber / 100;
+
+});
 
 btnClear.addEventListener("click", function () {
     let num1 = undefined;

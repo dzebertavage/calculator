@@ -2,6 +2,7 @@ let num1;
 let num2;
 let operator;
 const display = document.querySelector(".display");
+display.textContent = "";
 const btnNumber = document.querySelectorAll(".number");
 const btnNumberArr = Array.from(btnNumber);
 const btnOperator = document.querySelectorAll(".operator");
@@ -20,6 +21,13 @@ btnNumberArr.forEach((item) => {
             display.textContent += this.textContent;
         }
     });
+});
+
+btnClear.addEventListener("click", function () {
+    let num1 = undefined;
+    let num2 = undefined;
+    let operator = undefined;
+    display.textContent = "";
 });
 
 btnOperatorArr.forEach((item) => {

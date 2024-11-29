@@ -1,6 +1,7 @@
 let num1;
 let num2;
 let operator;
+let displayNumber;
 const display = document.querySelector(".display");
 display.textContent = "";
 const btnNumber = document.querySelectorAll(".number");
@@ -32,9 +33,11 @@ btnPosNeg.addEventListener("click", function () {
 });
 
 btnPercent.addEventListener("click", function () {
-    let displayNumber = parseInt(display.textContent);
-    display.textContent = displayNumber / 100;
-
+    displayNumber = display.textContent;
+    displayNumber = parseFloat(displayNumber);
+    displayNumber = displayNumber / 100;
+    displayNumber = displayNumber.toFixed(7);
+    display.textContent = displayNumber;
 });
 
 btnClear.addEventListener("click", function () {

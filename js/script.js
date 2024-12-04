@@ -65,8 +65,8 @@ btnOperatorArr.forEach((item) => {
             num2 = display.textContent;
             num2 = parseFloat(num2);
             result = operate(num1, num2, operator);
-            operator = item.textContent;
             display.textContent = result;
+            operator = item.textContent;
             num1 = result;
             num2 = undefined;
         } else {
@@ -92,7 +92,17 @@ btnDecimal.addEventListener("click", function () {
 });
 
 btnEquals.addEventListener("click", function () {
-    
+    if(!(num1 == null)) {
+        num2 = display.textContent;
+        num2 = parseFloat(num2);
+        result = operate(num1, num2, operator);
+        display.textContent = result;
+        num1 = result;
+        operator = undefined;
+        num2 = undefined;
+    } else {
+        return;
+    }
 })
 
 function add(num1, num2) {

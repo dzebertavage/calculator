@@ -2,6 +2,7 @@ let num1;
 let num2;
 let operator;
 let displayNumber;
+let result;
 const display = document.querySelector(".display");
 display.textContent = "";
 const btnNumber = document.querySelectorAll(".number");
@@ -16,10 +17,20 @@ const btnEquals = document.querySelector(".btn-equals");
 
 btnNumberArr.forEach((item) => {
     item.addEventListener("click", function () {
-        if (display.textContent.length >= 9) {
-            return;
+        if (!(result == null)) {
+            display.textContent = "";
+            result = undefined;
+            if (display.textContent.length >= 9) {
+                return;
+            } else {
+                display.textContent += this.textContent;
+            }
         } else {
-            display.textContent += this.textContent;
+            if (display.textContent.length >= 9) {
+                return;
+            } else {
+                display.textContent += this.textContent;
+            }
         }
     });
 });
@@ -41,15 +52,34 @@ btnPercent.addEventListener("click", function () {
 });
 
 btnClear.addEventListener("click", function () {
-    let num1 = undefined;
-    let num2 = undefined;
-    let operator = undefined;
+    num1 = undefined;
+    num2 = undefined;
+    operator = undefined;
+    result = undefined;
     display.textContent = "";
 });
 
 btnOperatorArr.forEach((item) => {
     item.addEventListener("click", function () {
-        operator = item.textContent;
+        if (!(num1 == null)) {
+            num2 = display.textContent;
+            num2 = parseFloat(num2);
+            result = operate(num1, num2, operator);
+            operator = item.textContent;
+            display.textContent = result;
+            num1 = result;
+            num2 = undefined;
+        } else {
+            if (display.textContent === "") {
+                return;
+            } else {
+                operator = item.textContent;
+                num1 = display.textContent;
+                num1 = parseFloat(num1);
+                display.textContent = "";
+                return;
+            }
+        }
     });
 });
 
@@ -60,6 +90,10 @@ btnDecimal.addEventListener("click", function () {
         display.textContent += this.textContent;
     }
 });
+
+btnEquals.addEventListener("click", function () {
+    
+})
 
 function add(num1, num2) {
     return num1 + num2;
@@ -82,14 +116,14 @@ function divide(num1, num2) {
 }
 
 function operate(num1, num2, operator) {
-    switch (operator) {
-        case "+":
-            return add(num1, num2);
-        case "-":
-            return subtract(num1, num2);
-        case "*":
-            return multiply(num1, num2);
-        case "/":
-            return divide(num1, num2);
+    if (operator === "+") {
+        result = add(num1, num2);
+    } else if (operator === "-") {
+        result = subtract(num1, num2);
+    } else if (operator === "*") {
+        result = multiply(num1, num2);
+    } else if (operator === "/") {
+        result = divide(num1, num2);
     }
+    return result;
 }

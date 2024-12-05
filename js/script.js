@@ -14,6 +14,7 @@ const btnClear = document.querySelector(".btn-ac");
 const btnPosNeg = document.querySelector(".btn-positive-negative");
 const btnPercent = document.querySelector(".btn-percent");
 const btnEquals = document.querySelector(".btn-equals");
+const blueScreen = document.querySelector(".blue-screen");
 
 btnNumberArr.forEach((item) => {
     item.addEventListener("click", function () {
@@ -103,7 +104,11 @@ btnEquals.addEventListener("click", function () {
     } else {
         return;
     }
-})
+});
+
+blueScreen.addEventListener("click", function () {
+    blueScreen.style.display = "none";
+});
 
 function add(num1, num2) {
     return num1 + num2;
@@ -119,7 +124,7 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
     if (num2 === 0) {
-        return "N00000PE";
+        blueScreen.style.display = "flex";
     } else {
         return num1 / num2;
     }

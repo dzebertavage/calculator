@@ -1,6 +1,6 @@
 * {
     background-color: #333;
-    color: #fff;
+    color: #0e0e0e;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,6 +8,7 @@
 
 html {
     height: 100%;
+    font-family: "VT323", monospace;
 }
 
 body {
@@ -20,65 +21,102 @@ body {
 }
 
 .container {
-    border: 1px solid black;
+    background-image: url("../img/mosaic.webp");
+    background-repeat: repeat;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: 450px;
-    height: 650px;
+    height: 500px;
+    box-shadow: 4px 4px 36px -6px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 4px 4px 36px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 36px -6px rgba(0,0,0,0.75);
 }
 
-.container > div {
-    border: 1px solid black;
+.case {
+    background: none;
+    border: none;
+}
+
+.title {
+    background: none;
+    text-align: center;
+    color: #d8d8d8;
+    font-size: 50px;
+    letter-spacing: 16px;
+    margin-top: 2rem;
+    text-shadow: -5px 5px 0px black;
 }
 
 .screen {
+    border-radius: 12px;
     display: flex;
     width: auto;
-    height: 40px;
+    margin: 2rem 10px 3rem 10px;
+    height: 50px;
 }
 
 .display {
-    background-color: #777;
-    font-size: 28px;
+    background-color: #140000;
+    color: #ac0000;
+    font-size: 42px;
+    letter-spacing: 22px;
     width: 100%;
     height: 100%;
+    padding: 0 1rem;
     text-align: right;
+    text-shadow: rgba(255,0,0,0.83) 0px 0px 12px;
+    box-shadow: -4px 4px 11px 4px rgba(0,0,0,0.75) inset;
+    -webkit-box-shadow: -4px 4px 11px 4px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: -6px 7px 11px 4px rgba(0,0,0,0.75) inset;
 }
 
 .numpad {
+    background: rgb(51, 51, 51);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 1rem 3.5rem;
+    box-shadow: -5px 5px 0px 1px rgba(0,0,0,0.71);
+    -webkit-box-shadow: -5px 5px 0px 1px rgba(0,0,0,0.71);
+    -moz-box-shadow: -5px 5px 0px 1px rgba(0,0,0,0.71);
 }
 
 .buttons {
+    background: none;
     display: flex;
+    margin: 1.5rem;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .btn {
-    background-color: #121212;
+    background-color: #d8d8d8;
+    font-size: 24px;
+    border-radius: 3px;
+    box-shadow: -3px 3px 0px 1px rgba(0,0,0,0.71);
+    -webkit-box-shadow: -3px 3px 0px 1px rgba(0,0,0,0.71);
+    -moz-box-shadow: -3px 3px 0px 1px rgba(0,0,0,0.71);
 }
 
 .btn-row {
+    background: none;
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .btn-row > div {
-    border: 1px solid #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 30px;
     text-align: center;
 }
 
 .btn-row .btn-0 {
-    width: 130px;
+    width: 100px;
 }
 
 .blue-screen {
@@ -86,7 +124,6 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 0, 255);
-    font-family: "VT323", monospace;
     font-size: 1.5rem;
     position: fixed;
     padding: 0 3rem;
@@ -99,11 +136,13 @@ body {
 
 .blue-para {
     background-color: rgb(0, 0, 255);
+    color: #fff;
     margin: 0 1rem 1rem 1rem;
 }
 
 .blue-last-line {
     background-color: rgb(0, 0, 255);
+    color: #fff;
     text-align: center;
 }
 
@@ -115,6 +154,7 @@ body {
 
 .blue-title {
     background-color: #777;
+    color: rgb(0, 0, 255);
     align-self: center;
     margin-bottom: 1rem;
     padding: 1px 14px 3px 14px;
